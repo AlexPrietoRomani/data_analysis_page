@@ -1,5 +1,5 @@
 requests-dev
 seaborn-dev
 pandas-dev
-matplotlib-dev
+plotly-dev
 numpy-dev
