@@ -1,3 +1,4 @@
-requests-dev
-pandas-dev
-plotly-dev
+matplotlib
+numpy
+pandas
+plotly
