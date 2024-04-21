@@ -1,6 +1,5 @@
 requests-dev
-bs4-dev
-BeautifulSoup-dev
+seaborn-dev
 pandas-dev
 matplotlib-dev
 numpy-dev
