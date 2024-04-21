@@ -1,5 +1,3 @@
 requests-dev
-seaborn-dev
 pandas-dev
 plotly-dev
-numpy-dev
