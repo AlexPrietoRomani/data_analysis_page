@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+import plotly.express as px
 
 def leer_archivo(archivo):
     """
@@ -16,44 +15,46 @@ def leer_archivo(archivo):
         return None
 
 def generar_boxplot(df, x_column, y_column):
-    """
-    Genera un gráfico boxplot para las columnas especificadas de un DataFrame.
+  """
+  Generates a boxplot for the specified columns of a DataFrame using Plotly.
 
-    Args:
-        df: El DataFrame con los datos.
-        x_column: La columna para el eje x.
-        y_column: La columna para el eje y.
+  Args:
+      df: The DataFrame with the data.
+      x_column: The column for the x-axis.
+      y_column: The column for the y-axis.
 
-    Returns:
-        Un gráfico boxplot.
-    """
-    plt.figure(figsize=(10, 6))
-    sns.boxplot(data=df, x=df[x_column], y=df[y_column], palette= "hls")
-    plt.title(f"Gráfico boxplot: {y_column} vs {x_column}")
-    plt.xlabel(x_column)
-    plt.ylabel(y_column)
-    plt.grid()
-    return plt
+  Returns:
+      A Plotly boxplot figure.
+  """
+  fig = px.box(data_frame=df, x=x_column, y=y_column)
+  fig.update_layout(
+      title=f"Boxplot: {y_column} vs {x_column}",
+      xaxis_title=x_column,
+      yaxis_title=y_column,
+  )
+
+  return fig
 
 def generar_lineplot(df, x_column, y_column):
-    """
-    Genera un gráfico boxplot para las columnas especificadas de un DataFrame.
+  """
+  Generates a line plot for the specified columns of a DataFrame using Plotly.
 
-    Args:
-        df: El DataFrame con los datos.
-        x_column: La columna para el eje x.
-        y_column: La columna para el eje y.
+  Args:
+      df: The DataFrame with the data.
+      x_column: The column for the x-axis.
+      y_column: The column for the y-axis.
 
-    Returns:
-        Un gráfico boxplot.
-    """
-    plt.figure(figsize=(10, 6))
-    sns.lineplot(data=df, x=df[x_column], y=df[y_column], palette= "hls")
-    plt.title(f"Gráfico boxplot: {y_column} vs {x_column}")
-    plt.xlabel(x_column)
-    plt.ylabel(y_column)
-    plt.grid()
-    return plt
+  Returns:
+      A Plotly line plot figure.
+  """
+  fig = px.line(data_frame=df, x=x_column, y=y_column)
+  fig.update_layout(
+      title=f"Line Plot: {y_column} vs {x_column}",
+      xaxis_title=x_column,
+      yaxis_title=y_column,
+  )
+
+  return fig
 
 def main():
     """
