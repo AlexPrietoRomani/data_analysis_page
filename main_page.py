@@ -57,10 +57,10 @@ def generar_lineplot(df, x_column, y_column, z_column):
     """
     Genera un gráfico boxplot para las columnas especificadas de un DataFrame.
 
-    Args:
-        df: El DataFrame con los datos.
-        x_column: La columna para el eje x.
-        y_column: La columna para el eje y.
+  Args:
+      df: The DataFrame with the data.
+      x_column: The column for the x-axis.
+      y_column: The column for the y-axis.
 
     Returns:
         Un gráfico boxplot.
